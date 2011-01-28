@@ -1,0 +1,31 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "/admin/vendor/globalize/translations.css" %>
+<% end %>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag "/admin/vendor/globalize/translations.js" %>
+<% end %>
+
+<li>
+  <nav id="translation-tabs" class="tabs">
+    <% Typus::SITE_LOCALES.each do |l,t| 
+      @item.translations.find_or_initialize_by_locale(t) %>
+      <a href="#<%= t %>"><%= l %></a>
+    <% end %>
+  </nav>  
+</li>
+
+<%= form.fields_for :translations do |t| %>
+
+  <div id="<%= "translation-tab-#{t.object.locale}" %>" class="<%= "translation tab-#{t.object.locale}" %> tab">
+  
+    <% @item.translated_attribute_names.each do |a| %>
+      <li id="<%= "#{a}_#{t.object.locale}" %>">
+        <%= t.label :locale, Typus::I18n.t("#{@resource.human_attribute_name(a)}", :lang => t.object.locale) %>
+        <%= @item.translations.columns_hash[a.to_s].type == :string ?  t.text_field(a) : t.text_area(a) %>        
+      </li>
+    <% end %>
+    <%= t.hidden_field :locale %>        
+
+  </div>
+
+<% end %>

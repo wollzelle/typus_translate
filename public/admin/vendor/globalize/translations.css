@@ -1,0 +1,57 @@
+/* Translations
+----------------------------------------------- */
+
+
+/* style 1 */
+.tabs {
+  border-bottom: 1px solid #d3d3d3;
+  padding: 0 10px;
+/*  padding-left: 130px;*/
+  margin-bottom: 1em;
+/*  margin-top: -2.8em;*/
+  width: 685px;
+}
+
+.tabs a {
+  background: #eee;
+  background: #f3f3f3;
+  text-decoration: none;
+  border: 1px solid #d3d3d3;
+  display: inline-block;
+  padding: 4px 20px;
+  margin-bottom: -1px;
+}
+
+.tabs a:hover {
+  text-decoration: none !important;
+}
+
+.tabs a.active {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+/* style 2 */
+
+/*.tabs {
+  padding-left: 130px;
+  margin-bottom: 1em;
+  margin-top: -2.8em;
+}
+
+.tabs a {
+  display: inline-block;
+  border-radius: 1em;
+  background: #eee;
+  text-decoration: none;
+  padding: 3px 20px;
+}
+
+.tabs a:hover {
+  text-decoration: none !important;
+}
+
+.tabs a.active {
+  background: #777;
+  color: #fff;
+}*/

@@ -1,4 +1,4 @@
-require 'rubygems'
+require 'rubygems' 
 require 'bundler'
 begin
   Bundler.setup(:default, :development)
@@ -15,13 +15,14 @@ Jeweler::Tasks.new do |gem|
   gem.name = "typus_globalize"
   gem.homepage = "http://github.com/tkoenig/typus_globalize"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{globalize3 for typus}
+  gem.description = %Q{adds multilanguage support to typus}
   gem.email = "t.koenig@wollzelle.com"
-  gem.authors = ["Thomas König"]
+  gem.authors = ["Thomas Koenig"]
+  gem.files = Dir["{lib}/**/*", "{app}/**/*", "{config}/**/*", "{public}/**/*"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
+  gem.add_runtime_dependency 'globalize3'
   #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
 Jeweler::RubygemsDotOrgTasks.new
