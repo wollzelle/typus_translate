@@ -12,8 +12,8 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "typus_globalize"
-  gem.homepage = "http://github.com/tkoenig/typus_globalize"
+  gem.name = "typus_translate"
+  gem.homepage = "http://wollzelle.com"
   gem.license = "MIT"
   gem.summary = %Q{globalize3 for typus}
   gem.description = %Q{adds multilanguage support to typus}
@@ -48,7 +48,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "typus_globalize #{version}"
+  rdoc.title = "typus_translate #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

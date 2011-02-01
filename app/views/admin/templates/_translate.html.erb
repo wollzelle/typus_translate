@@ -1,0 +1,48 @@
+<%
+  translation_locales = Typus::Translate::Configuration.config["locales"]
+  
+  translation_locales.each do |locale, name|
+    @item.translations.find_or_initialize_by_locale(locale)
+  end
+%>
+
+<% content_for :stylesheets do %>
+
+  <!-- translate css -->
+  <%= stylesheet_link_tag "/admin/vendor/translate/translate.css" %>
+
+<% end %>
+
+<% content_for :javascripts do %>
+
+  <!-- translate js -->
+  <%= javascript_include_tag "/admin/vendor/translate/translate.js" %>  
+  <script>
+    $(document).ready(function(){      
+      $('form.resource').translate();          
+    });      
+  </script>
+
+<% end %>
+
+<li>
+  <nav id="translate-tabs">
+    <% translation_locales.each do |locale, name| %>
+      <a href="#lang-<%= locale %>" class="lang-<%= locale %>"><%= name %></a>
+    <% end %>
+  </nav>  
+</li>
+
+<%= form.fields_for :translations do |t| %>
+
+  <%= t.hidden_field :locale %>        
+  
+  <% @item.translated_attribute_names.each do |a| %>
+    <li class="<%= "translation lang-#{t.object.locale}" %>">
+      <%# t.label :locale, Typus::I18n.t("#{@resource.human_attribute_name(a)}", :lang => translation_locales[t.object.locale.to_s]) %>
+      <%= t.label :locale, "#{a.capitalize} (#{t.object.locale})"   %>
+      <%= @item.translations.columns_hash[a.to_s].type == :string ?  t.text_field(a) : t.text_area(a) %>        
+    </li>
+  <% end %>
+
+<% end %>

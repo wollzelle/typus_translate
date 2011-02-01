@@ -1,0 +1,11 @@
+TODO:
+
+✓ rename project
+
+- rename repository
+
+- move assets to new namespace (admin > typus)
+
+- tabindex for visible / hidden fields
+
+- remember active tab when saving (cookie)

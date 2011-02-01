@@ -4,35 +4,32 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{typus_globalize}
+  s.name = %q{typus_translate}
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thomas Koenig"]
-  s.date = %q{2011-01-28}
+  s.date = %q{2011-02-01}
   s.description = %q{adds multilanguage support to typus}
   s.email = %q{t.koenig@wollzelle.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.rdoc",
+    "TODO"
   ]
   s.files = [
-    "app/views/admin/templates/_translations.html.erb",
-    "lib/globalize/configuration.rb",
-    "lib/globalize/engine.rb",
-    "lib/typus_globalize.rb",
-    "public/admin/vendor/globalize/translations.css",
-    "public/admin/vendor/globalize/translations.js"
+    "app/views/admin/templates/_translatable.html.erb",
+    "lib/translate/configuration.rb",
+    "lib/translate/engine.rb",
+    "lib/typus_translate.rb",
+    "public/admin/vendor/translate/translate.css",
+    "public/admin/vendor/translate/translate.js"
   ]
-  s.homepage = %q{http://github.com/tkoenig/typus_globalize}
+  s.homepage = %q{http://wollzelle.com}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{globalize3 for typus}
-  s.test_files = [
-    "test/helper.rb",
-    "test/test_typus_globalize.rb"
-  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

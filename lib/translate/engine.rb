@@ -1,10 +1,10 @@
-require "typus_globalize"
+require "typus_translate"
 require "globalize3"
 require "rails"
 
 
 module Typus
-  module Globalize
+  module Translate
     class Engine < Rails::Engine
 
       initializer "static assets" do |app|
@@ -12,7 +12,7 @@ module Typus
       end     
 
       def initialize
-        Typus::Globalize::Configuration.config!
+        Typus::Translate::Configuration.config!
       end
     end
   end
