@@ -1,14 +1,11 @@
 TODO:
 
-- remember active tab when saving (cookie or hash)
-
 - tabindex for visible / hidden fields
-
 
 ✓ move assets to new namespace (admin > typus)
 ✓ rename project
 ✓ rename repository
-
+✓ remember active tab when saving (cookie or hash)
 
 
 
