@@ -7,34 +7,33 @@
 
   $.fn.translate = function(){
     
-    var self         = this,
-        el           = form = this,
-        tabs         = el.find('#translate-tabs'),
-        inputs       = el.find('.inputs'),
-        translatable = inputs.find('.translation'),
-        baseLang     = tabs.find('a:first').attr('href').replace('#', '.');
-
-    this.data('activeLang', baseLang);
-
-    $(document).bind('translate:refresh', function() { showTab(self.data('activeLang')); });
-        
-    function showTab(lang){
-      self.data('activeLang', lang);    
-      // translatable.hide().removeClass('active');
-      inputs.find('.translation').hide().removeClass('active');
-      tabs.find('a').removeClass('active');
-      form.find(lang).addClass('active').show();
-    }
+    var form     = this,
+        tabs     = form.find('#translate-tabs'),
+        inputs   = form.find('.inputs'),
+        baseLang = tabs.find('a:first').attr('href').replace('#', '.');
+                
+    $(window).bind('load', function(){ 
+      showTab( $.cookie('translate_activeLang') || baseLang ); 
+    });
+    
+    $(window).bind('translate:refresh', function(){ 
+      showTab( $.cookie('translate_activeLang') ); 
+    });
 
     tabs.find('a').click(function(e){          
       var lang = $(this).attr('href').replace('#', '.');    
       showTab(lang);          
       e.preventDefault();
     });
-   
-    showTab(baseLang);
-    
-    return this;    
+        
+    function showTab(lang){
+      $.cookie('translate_activeLang', lang);
+      inputs.find('.translation').hide().removeClass('active');
+      tabs.find('a').removeClass('active');
+      form.find(lang).addClass('active').show();
+    }
+       
+    return this;
   }
 
 })(jQuery);

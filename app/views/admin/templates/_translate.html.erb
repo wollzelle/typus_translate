@@ -16,7 +16,8 @@
 <% content_for :javascripts do %>
 
   <!-- translate js -->
-  <%= javascript_include_tag "/vendor/typus/translate/translate.js" %>  
+  <%= javascript_include_tag  "/vendor/typus/translate/translate.js", 
+                              "/vendor/typus/translate/jquery.cookie.js" %>  
   <script>
     $(document).ready(function(){      
       $('form.resource').translate();          
@@ -39,7 +40,6 @@
   
   <% @item.translated_attribute_names.each do |a| %>
     <li class="<%= "translation lang-#{t.object.locale}" %>">
-      <%# t.label :locale, Typus::I18n.t("#{@resource.human_attribute_name(a)}", :lang => translation_locales[t.object.locale.to_s]) %>
       <%= t.label :locale, "#{a.capitalize} (#{t.object.locale})"   %>
       <%= @item.translations.columns_hash[a.to_s].type == :string ?  t.text_field(a) : t.text_area(a) %>        
     </li>
