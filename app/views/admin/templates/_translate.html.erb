@@ -9,14 +9,14 @@
 <% content_for :stylesheets do %>
 
   <!-- translate css -->
-  <%= stylesheet_link_tag "/admin/vendor/translate/translate.css" %>
+  <%= stylesheet_link_tag "/vendor/typus/translate/translate.css" %>
 
 <% end %>
 
 <% content_for :javascripts do %>
 
   <!-- translate js -->
-  <%= javascript_include_tag "/admin/vendor/translate/translate.js" %>  
+  <%= javascript_include_tag "/vendor/typus/translate/translate.js" %>  
   <script>
     $(document).ready(function(){      
       $('form.resource').translate();          

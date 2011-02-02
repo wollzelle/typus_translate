@@ -1,11 +1,19 @@
 TODO:
 
-✓ rename project
-
-- rename repository
-
-- move assets to new namespace (admin > typus)
+- remember active tab when saving (cookie or hash)
 
 - tabindex for visible / hidden fields
 
-- remember active tab when saving (cookie)
+
+✓ move assets to new namespace (admin > typus)
+✓ rename project
+✓ rename repository
+
+
+
+
+
+
+IDEAS:
+
+- Generator to copy public dir
