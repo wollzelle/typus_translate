@@ -13,11 +13,11 @@
         baseLang = tabs.find('a:first').attr('href').replace('#', '.');
                 
     $(window).bind('load', function(){ 
-      showTab( $.cookie('translate_activeLang') || baseLang ); 
+      showTab( $.cookie('translate_active_lang') || baseLang ); 
     });
     
     $(window).bind('translate:refresh', function(){ 
-      showTab( $.cookie('translate_activeLang') ); 
+      showTab( $.cookie('translate_active_lang') ); 
     });
 
     tabs.find('a').click(function(e){          
@@ -27,7 +27,7 @@
     });
         
     function showTab(lang){
-      $.cookie('translate_activeLang', lang);
+      $.cookie('translate_active_lang', lang, { path: '/' } );
       inputs.find('.translation').hide().removeClass('active');
       tabs.find('a').removeClass('active');
       form.find(lang).addClass('active').show();
