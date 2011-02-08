@@ -3,7 +3,7 @@
   
   translation_locales.each do |locale, name|
     @item.translations.find_or_initialize_by_locale(locale)
-  end
+  end if @item.translations.empty?  
 %>
 
 <% content_for :stylesheets do %>
