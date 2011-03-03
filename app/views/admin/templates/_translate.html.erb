@@ -27,11 +27,11 @@
 <% end %>
 
 <li>
-  <nav id="translate-tabs">
+  <div id="translate-tabs">
     <% translation_locales.each do |locale, name| %>
       <a href="#lang-<%= locale %>" class="lang-<%= locale %>"><%= name %></a>
     <% end %>
-  </nav>  
+  </div>  
 </li>
 
 <%= form.fields_for :translations do |t| %>
