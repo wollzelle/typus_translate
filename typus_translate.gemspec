@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thomas Koenig"]
-  s.date = %q{2011-02-01}
+  s.date = %q{2011-05-26}
   s.description = %q{adds multilanguage support to typus}
   s.email = %q{t.koenig@wollzelle.com}
   s.extra_rdoc_files = [
@@ -18,12 +18,13 @@ Gem::Specification.new do |s|
     "TODO"
   ]
   s.files = [
-    "app/views/admin/templates/_translatable.html.erb",
+    "app/views/admin/templates/_translate.html.erb",
     "lib/translate/configuration.rb",
     "lib/translate/engine.rb",
     "lib/typus_translate.rb",
-    "public/admin/vendor/translate/translate.css",
-    "public/admin/vendor/translate/translate.js"
+    "public/vendor/typus/translate/jquery.cookie.js",
+    "public/vendor/typus/translate/translate.css",
+    "public/vendor/typus/translate/translate.js"
   ]
   s.homepage = %q{http://wollzelle.com}
   s.licenses = ["MIT"]
