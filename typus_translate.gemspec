@@ -8,13 +8,13 @@ Gem::Specification.new do |s|
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Thomas Koenig"]
-  s.date = %q{2011-05-26}
+  s.authors = [%q{Thomas Koenig}]
+  s.date = %q{2011-08-10}
   s.description = %q{adds multilanguage support to typus}
   s.email = %q{t.koenig@wollzelle.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc",
+    "README.md",
     "TODO"
   ]
   s.files = [
@@ -27,13 +27,12 @@ Gem::Specification.new do |s|
     "public/vendor/typus/translate/translate.js"
   ]
   s.homepage = %q{http://wollzelle.com}
-  s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.licenses = [%q{MIT}]
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.7}
   s.summary = %q{globalize3 for typus}
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
