@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Thomas Koenig}]
+  s.authors = [%q{Thomas Koenig}, %q{William Meleyal}, %q{I.C. Wiener}]
   s.date = %q{2011-08-10}
   s.description = %q{adds multilanguage support to typus}
-  s.email = %q{t.koenig@wollzelle.com}
+  s.email = %q{team@wollzelle.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md",
@@ -27,7 +27,6 @@ Gem::Specification.new do |s|
     "public/vendor/typus/translate/translate.js"
   ]
   s.homepage = %q{http://wollzelle.com}
-  s.licenses = [%q{MIT}]
   s.require_paths = [%q{lib}]
   s.rubygems_version = %q{1.8.7}
   s.summary = %q{globalize3 for typus}

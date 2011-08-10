@@ -14,11 +14,10 @@ Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "typus_translate"
   gem.homepage = "http://wollzelle.com"
-  gem.license = "MIT"
   gem.summary = %Q{globalize3 for typus}
   gem.description = %Q{adds multilanguage support to typus}
-  gem.email = "t.koenig@wollzelle.com"
-  gem.authors = ["Thomas Koenig"]
+  gem.email = "team@wollzelle.com"
+  gem.authors = ["Thomas Koenig", "William Meleyal", "I.C. Wiener"]
   gem.files = Dir["{lib}/**/*", "{app}/**/*", "{config}/**/*", "{public}/**/*"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
