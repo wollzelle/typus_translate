@@ -1,6 +1,9 @@
 # typus_translate
 
-https://github.com/wollzelle/typus_translate
+Translate module for Typus, adds support for editing multiple languages.
+
+* https://github.com/wollzelle/typus_translate
+* https://github.com/fesplugas/typus
 
 ## Installation
 
@@ -10,12 +13,18 @@ In your `Gemfile`:
 
 ## Configuration
 
-**In `config/translate.yml`:**
+**In `config/typus_translate.yml`:**
 
     locales: 
       de: "Deutsch"
       en: "English"
 
+**In your model:**
+
+    class Post < ActiveRecord::Base
+      translates :title, :text
+      accepts_nested_attributes_for :translations
+      ...
 
 **In your migration:**
 
@@ -32,13 +41,6 @@ In your `Gemfile`:
       end
     end
 
-**In your model:**
-
-    class Post < ActiveRecord::Base
-      translates :title, :text
-      accepts_nested_attributes_for :translations
-      ...
-    
 **In `config/typus/application.yml`**
 
     Posts:
@@ -47,7 +49,6 @@ In your `Gemfile`:
         options:
           templates:
             translate: translate    
-
 
 ## Copyright
 
