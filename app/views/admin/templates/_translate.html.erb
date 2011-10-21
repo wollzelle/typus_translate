@@ -7,23 +7,16 @@
 %>
 
 <% content_for :stylesheets do %>
-
-  <!-- translate css -->
-  <%= stylesheet_link_tag "/vendor/typus/translate/translate.css" %>
-
+  <%= stylesheet_link_tag "typus_translate/application" %>
 <% end %>
 
 <% content_for :javascripts do %>
-
-  <!-- translate js -->
-  <%= javascript_include_tag  "/vendor/typus/translate/translate.js", 
-                              "/vendor/typus/translate/jquery.cookie.js" %>  
+  <%= javascript_include_tag  "typus_translate/application" %>
   <script>
-    $(document).ready(function(){      
-      $('form.resource').translate();          
+    $(document).ready(function(){
+      $('form.resource').translate();
     });      
   </script>
-
 <% end %>
 
 <li>

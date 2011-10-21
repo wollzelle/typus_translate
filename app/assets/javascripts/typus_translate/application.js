@@ -1,5 +1,8 @@
+//= require jquery.cookie
+//= require_self
+
 /*! ----------------------------------------------------------------------------
-* translate.js
+* typus_translate
 * Copyright 2011 wollzelle GmbH (http://wollzelle.com). All rights reserved.
 * --------------------------------------------------------------------------- */
 
@@ -34,6 +37,6 @@
     }
        
     return this;
-  }
+  };
 
 })(jQuery);
