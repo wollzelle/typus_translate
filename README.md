@@ -7,9 +7,17 @@ Translate module for Typus, adds support for editing multiple languages.
 
 ## Installation
 
+### Rails >= 3.1
+
 In your `Gemfile`:
 
     gem 'typus_translate'
+
+### Rails <= 3.0
+
+In your `Gemfile`:
+
+    gem 'typus_translate', '~> 3.0'
 
 ## Configuration
 
