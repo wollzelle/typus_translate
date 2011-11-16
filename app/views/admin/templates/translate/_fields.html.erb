@@ -1,0 +1,11 @@
+<% translator.forms.each do |locale, form| %>
+
+  <li class="<%= "translation lang-#{locale}" %>">
+
+    <%= form.label :locale, "#{attribute.capitalize} (#{locale})" %>
+
+    <%= instance.field_type(form) %>
+
+  </li>
+
+<% end %>

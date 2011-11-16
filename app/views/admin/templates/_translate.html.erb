@@ -1,41 +1,42 @@
-<%
-  translation_locales = Typus::Translate::Configuration.config["locales"]
-  
-  translation_locales.each do |locale, name|
-    @item.translations.find_or_initialize_by_locale(locale)
-  end if @item.translations.empty?  
+<%=
+
+##
+#   Setup 
+#   this only happens once, the first time the template is called
+#
+
+translator = Admin::TranslateHelper::Translator
+
+translator.setup do
+
+  # make sure the translations exist on the model
+  translator.setup_model(@item)  
+
+  # load assets
+  render  :partial => 'admin/templates/translate/assets', 
+          :locals => { :translator => translator }
+
+  # create a form builder instance for each locale 
+  # and store a reference to it on the translator class
+  # (this ensures we always use the same form builders, 
+  # not create new ones for each attibute/locale combination)
+  render  :partial => 'admin/templates/translate/locales', 
+          :locals => { :translator => translator, :form => form }           
+
+end
+
+##
+#   Template
+#   this is rendered for each translatable attribute (title, body, etc.)
+#
+
+instance = translator.new(@item, attribute)
+
+# use the saved form builders to render the form fields for each language
+render  :partial => 'admin/templates/translate/fields', 
+        :locals => {  :translator => translator, 
+                      :instance => instance, 
+                      :form => form, 
+                      :attribute => attribute }
+
 %>
-
-<% content_for :stylesheets do %>
-  <%= stylesheet_link_tag "typus_translate/application" %>
-<% end %>
-
-<% content_for :javascripts do %>
-  <%= javascript_include_tag  "typus_translate/application" %>
-  <script>
-    $(document).ready(function(){
-      $('form.resource').translate();
-    });      
-  </script>
-<% end %>
-
-<li>
-  <div id="translate-tabs">
-    <% translation_locales.each do |locale, name| %>
-      <a href="#lang-<%= locale %>" class="lang-<%= locale %>"><%= name %></a>
-    <% end %>
-  </div>  
-</li>
-
-<%= form.fields_for :translations do |t| %>
-
-  <%= t.hidden_field :locale %>        
-  
-  <% @item.translated_attribute_names.each do |a| %>
-    <li class="<%= "translation lang-#{t.object.locale}" %>">
-      <%= t.label :locale, "#{a.capitalize} (#{t.object.locale})"   %>
-      <%= @item.translations.columns_hash[a.to_s].type == :string ?  t.text_field(a) : t.text_area(a) %>        
-    </li>
-  <% end %>
-
-<% end %>

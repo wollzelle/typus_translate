@@ -1,16 +1,5 @@
 TODO:
 
+- fallback / placeholders
 
 - tabindex for visible / hidden fields
-
-
-
-
-
-
-
-✓ cleanup gemspec (see typus_serialize)
-✓ move assets to new namespace (admin > typus)
-✓ rename project
-✓ rename repository
-✓ remember active tab when saving (cookie or hash)
