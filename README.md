@@ -30,8 +30,7 @@ In your `Gemfile`:
 **In your model:**
 
     class Post < ActiveRecord::Base
-      translates :title, :text
-      accepts_nested_attributes_for :translations
+      typus_translate :title, :body
       ...
 
 **In your migration:**
@@ -41,22 +40,13 @@ In your `Gemfile`:
         create_table :posts do |t|
           t.timestamps
         end
-        Post.create_translation_table! :title => :string, :text => :text
+        Post.create_translation_table! :title => :string, :body => :text
       end
       def down
         drop_table :posts
         Post.drop_translation_table!
       end
     end
-
-**In `config/typus/application.yml`**
-
-    Posts:
-      fields:
-        form: translate
-        options:
-          templates:
-            translate: translate    
 
 ## Copyright
 
