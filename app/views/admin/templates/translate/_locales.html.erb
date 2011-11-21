@@ -1,5 +1,7 @@
 <%= form.fields_for :translations do |f| %>
 
+  <%= f.hidden_field :locale %>   
+
   <% translator.forms[f.object.locale] = f %>
 
 <% end %>

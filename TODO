@@ -3,3 +3,5 @@ TODO:
 - fallback / placeholders
 
 - tabindex for visible / hidden fields
+
+- initialize locales if model is created without defaults.... (ex. in console "Timepieces::Collection.create" -> no translated fields visible)
