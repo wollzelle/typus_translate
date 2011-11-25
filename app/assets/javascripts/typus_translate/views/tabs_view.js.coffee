@@ -23,9 +23,12 @@ class Typus.Translate.Views.Tabs extends Backbone.View
 
   showTab: ->
     className = ".lang-#{@lang}"
-    @form.find('.translation').hide().removeClass('active')
     @tabs.find('a').removeClass('active')
+    @form.css({ 'min-height': @form.height() }) # prevents jumping
+    @form.find('.translation').hide().removeClass('active')
     @form.find(className).addClass('active').show()
+    @form.css({ 'min-height': '' })
+    $(window).trigger('translate:activated', [@lang])
 
   activateTab: (e) ->
     lang = $(e.target).data('lang')
