@@ -35,7 +35,11 @@ module Admin::TranslateHelper
     def self.locales_json      
       raw @@locales.to_json rescue []
     end
-
+    
+    def self.field_name_for(builder, attribute)
+      "#{builder.object_name}[#{attribute.to_s.sub(/\?$/,"")}]"
+    end
+      
     ##
     # Instance Methods
     #
