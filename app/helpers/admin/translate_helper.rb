@@ -25,11 +25,11 @@ module Admin::TranslateHelper
     end
 
     def self.setup_model(model)
-      if model.translations.empty?
-        @@locales.each do |locale, name|
-          model.translations.find_or_initialize_by_locale(locale)
-        end 
-      end
+      # make sure each locale exists
+      # to setup the form fields/tabs for each locale
+      @@locales.each do |locale, name|
+        model.translations.find_or_initialize_by_locale(locale)
+      end 
     end      
     
     def self.locales_json      
