@@ -4,25 +4,22 @@
 #   Setup 
 #   this only happens once, the first time the template is called
 #
-
-translator = Admin::TranslateHelper::Translator
-
-translator.setup do
-
+@translator ||= Admin::TranslateHelper::Translator.new
+@translator.setup do
   # make sure the translations exist on the model
-  translator.setup_model(@item)  
+  Admin::TranslateHelper::Translator.setup_model(@item)  
 %>
 <%=
   # load assets
   render  :partial => 'admin/templates/translate/assets', 
-          :locals => { :translator => translator } %>
+          :locals => { :translator => Admin::TranslateHelper::Translator } %>
 <%=
   # create a form builder instance for each locale 
   # and store a reference to it on the translator class
   # (this ensures we always use the same form builders, 
   # not create new ones for each attibute/locale combination)
   render  :partial => 'admin/templates/translate/locales', 
-          :locals => { :translator => translator, :form => form }           
+          :locals => { :translator => Admin::TranslateHelper::Translator, :form => form }           
 %>
 <% end %>
 <%=
@@ -31,11 +28,11 @@ translator.setup do
 #   this is rendered for each translatable attribute (title, body, etc.)
 #
 
-instance = translator.new(@item, attribute)
+instance = Admin::TranslateHelper::Translator.new(@item, attribute)
 
 # use the saved form builders to render the form fields for each language
 render  :partial => 'admin/templates/translate/fields', 
-        :locals => {  :translator => translator, 
+        :locals => {  :translator => @translator, 
                       :instance => instance, 
                       :form => form, 
                       :attribute => attribute }

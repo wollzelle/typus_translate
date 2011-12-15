@@ -14,16 +14,6 @@ module Admin::TranslateHelper
 
     cattr_accessor :forms, :locales
     
-    def self.setup?
-      return true if @setup
-      @setup = true
-      return false
-    end
-
-    def self.setup
-      yield unless self.setup?
-    end
-
     def self.setup_model(model)
       # make sure each locale exists
       # to setup the form fields/tabs for each locale
@@ -44,9 +34,19 @@ module Admin::TranslateHelper
     # Instance Methods
     #
 
-    def initialize(model, attribute)
+    def initialize(model = nil, attribute = nil)
       @model = model
       @attribute = attribute
+    end
+
+    def setup?
+      return true if @setup
+      @setup = true
+      return false
+    end
+
+    def setup
+      yield unless self.setup?
     end
 
     def field_type(field)
