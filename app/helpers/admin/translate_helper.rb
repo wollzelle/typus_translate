@@ -17,9 +17,10 @@ module Admin::TranslateHelper
     def self.setup_model(model)
       # make sure each locale exists
       # to setup the form fields/tabs for each locale
-      translations_empty = model.translations.empty?
-      @@locales.each do |locale, name|
-        model.translations.find_or_initialize_by_locale(locale) if translations_empty
+      current_translations = model.translations.pluck(:locale)
+      missing_translations = @@locales.keys - current_translations
+      missing_translations.each do |locale|
+        model.translations.find_or_initialize_by_locale(locale)
       end
     end
 
