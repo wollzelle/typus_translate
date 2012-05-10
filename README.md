@@ -23,7 +23,7 @@ In your `Gemfile`:
 
 **In `config/typus_translate.yml`:**
 
-    locales: 
+    locales:
       de: "Deutsch"
       en: "English"
 
@@ -32,6 +32,11 @@ In your `Gemfile`:
     class Post < ActiveRecord::Base
       typus_translate :title, :body
       ...
+
+**Support for (soft)limits:**
+    class Post < ActiveRecord::Base
+      typus_translate :title, :body, limit: { body: 300 }
+
 
 **In your migration:**
 
