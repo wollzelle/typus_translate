@@ -2,7 +2,6 @@
 #= require backbone
 #= require jquery-ui
 #= require jquery.cookie
-
 #= require_self
 #= require_tree ./templates
 #= require_tree ./views

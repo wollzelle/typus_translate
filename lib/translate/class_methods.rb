@@ -1,5 +1,6 @@
 module Typus
   module Translate
+
     module ClassMethods
       def typus_translate(*args)
         return if typus_translates?
@@ -26,5 +27,6 @@ module Typus
         end
       end
     end
+
   end
 end

@@ -3,6 +3,7 @@ require "rails"
 module Typus
   module Translate
     module Configuration
+
       def self.config!
         @@config = {}
         file = Rails.root.join("config/typus_translate.yml")
@@ -12,7 +13,9 @@ module Typus
         end
         return @@config
       end
+
       mattr_accessor :config
+
     end
   end
 end
