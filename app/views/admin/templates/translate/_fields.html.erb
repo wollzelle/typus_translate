@@ -1,8 +1,8 @@
 <% translator.forms.each do |locale, form| %>
 
-  <%# form.hidden_field :locale %>   
+  <%# form.hidden_field :locale %>
 
-  <li class="<%= "translation lang-#{locale}" %>">
+  <li class="<%= "translation lang-#{locale}" %>" <%= "data-limit=#{limit}" if limit %> >
 
     <%= form.label :locale, "#{attribute.capitalize} (#{locale})" %>
 

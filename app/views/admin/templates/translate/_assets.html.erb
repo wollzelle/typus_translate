@@ -14,7 +14,8 @@
         locales: <%= translator.locales_json %>,
         fallback: 'en'
       });
-    });      
+      $('li[data-limit]').typusTextLimit();
+    });
   </script>
 
 <% end %>

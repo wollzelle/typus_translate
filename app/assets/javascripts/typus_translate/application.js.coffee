@@ -17,3 +17,8 @@ Typus.Translator = (options, el) ->
   new Typus.Translate.Views.Tabs({ el, locales, fallback })
 
 $.widget.bridge('typusTranslate', Typus.Translator);
+
+Typus.TextLimit = (options, el) ->
+  new Typus.Translate.Views.TextLimit({ el })
+
+$.widget.bridge('typusTextLimit', Typus.TextLimit);
