@@ -4,7 +4,7 @@
 
   <li class="<%= "translation lang-#{locale}" %>" <%= "data-limit=#{limit}" if limit %> >
 
-    <%= form.label :locale, "#{attribute.capitalize} (#{locale})" %>
+    <%= form.label :locale, "#{@item.class.human_attribute_name(attribute, locale: locale)} (#{locale})" %>
 
     <%= instance.field_type(form) %>
 
