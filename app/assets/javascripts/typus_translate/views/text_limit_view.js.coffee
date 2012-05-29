@@ -10,7 +10,7 @@ class Typus.Translate.Views.TextLimit extends Backbone.View
     @label = @$('label').text()
     @limit = parseInt(@$el.attr('data-limit'))
     @length = @textarea.val().length
-    @textarea.attr('rows', Math.ceil(@limit/50))
+    @textarea.attr('rows', Math.ceil(@limit/80))
     @render()
 
   render: ->
