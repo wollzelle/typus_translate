@@ -4,9 +4,12 @@ class Typus.Translate.Views.TextLimit extends Backbone.View
     'keyup textarea': 'updateLimit'
     'blur textarea': 'updateLimit'
     'focus textarea': 'updateLimit'
+    'keyup input': 'updateLimit'
+    'blur input': 'updateLimit'
+    'focus input': 'updateLimit'
 
   initialize: (options) ->
-    @textarea =  @$('textarea')
+    @textarea =  @$(':input')
     @label = @$('label').text()
     @limit = parseInt(@$el.attr('data-limit'))
     @length = @textarea.val().length
