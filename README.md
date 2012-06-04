@@ -27,6 +27,11 @@ In your `Gemfile`:
       de: "Deutsch"
       en: "English"
 
+You can also adjust the configuration on how to handle empty translations globally:
+
+    fallbacks_for_empty_translations: true
+
+
 **In your model:**
 
     class Post < ActiveRecord::Base
