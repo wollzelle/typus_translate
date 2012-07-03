@@ -57,6 +57,17 @@ You can also adjust the configuration on how to handle empty translations global
         Post.drop_translation_table!
       end
     end
+    
+### Warning
+
+This gem  currently does not  support the new rails "Enforce whitelist mode for mass assignment" mode.
+So to make this gem work you currently have to comment out the following line in `application.rb`:
+
+    # config.active_record.whitelist_attributes = true
+
+## Todo
+
+* add support for `config.active_record.whitelist_attributes = true`
 
 ## Copyright
 
