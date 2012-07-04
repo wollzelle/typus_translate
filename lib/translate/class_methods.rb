@@ -8,12 +8,24 @@ module Typus
         cattr_accessor :typus_translate_options
         self.typus_translate_options ||= args.extract_options!
         self.typus_translate_options[:fallbacks_for_empty_translations] = Typus::Translate::Configuration.config['fallbacks_for_empty_translations'] if self.typus_translate_options[:fallbacks_for_empty_translations].nil? && !Typus::Translate::Configuration.config['fallbacks_for_empty_translations'].nil?
+        fields = args
+        as = self.typus_translate_options.delete(:as) || :admin
+
         args << self.typus_translate_options
         translates *args
 
-        accepts_nested_attributes_for :translations
-        self::Translation.attr_accessible :locale
         extend TemplateMethods
+
+        #Support for rails whitelist mode
+        unless accessible_attributes.empty?
+          attr_accessible :translations_attributes, :as => as
+          self::Translation.attr_accessible :locale, :as => as
+          fields.each do |f|
+            self::Translation.attr_accessible f, :as => as
+          end
+        end
+        accepts_nested_attributes_for :translations
+
       end
 
       def typus_translates?
