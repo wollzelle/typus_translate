@@ -21,7 +21,7 @@ In your `Gemfile`:
 
 ## Configuration
 
-**In `config/typus_translate.yml`:**
+### In `config/typus_translate.yml`:
 
     locales:
       de: "Deutsch"
@@ -32,18 +32,27 @@ You can also adjust the configuration on how to handle empty translations global
     fallbacks_for_empty_translations: true
 
 
-**In your model:**
+
+### In your model
 
     class Post < ActiveRecord::Base
       typus_translate :title, :body
       ...
 
 **Support for (soft)limits:**
+
     class Post < ActiveRecord::Base
       typus_translate :title, :body, limit: { body: 300 }
 
+** Support for mass assignment security**
 
-**In your migration:**
+This gem supports the rails mass_assignment security protection.
+If you use this together with typus, you must assign the correct roles in the options (`:admin` is set by default if whitelisting has been enabled).
+
+      typus_translate :title, :body, :as => [:editor, :admin]
+
+
+### In your migration
 
     class CreatePosts < ActiveRecord::Migration
       def up
