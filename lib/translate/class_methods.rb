@@ -12,6 +12,7 @@ module Typus
         translates *args
 
         accepts_nested_attributes_for :translations
+        self::Translation.attr_accessible :locale
         extend TemplateMethods
       end
 
