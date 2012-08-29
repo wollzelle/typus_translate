@@ -14,13 +14,13 @@ module Admin::TranslateHelper
 
     cattr_accessor :forms, :locales
 
-    def self.setup_model(model)
+    def self.setup_translations(translations)
       # make sure each locale exists
       # to setup the form fields/tabs for each locale
-      current_translations = model.translations.pluck(:locale)
+      current_translations = translations.collect { |t| t.locale.to_s }
       missing_translations = @@locales.keys - current_translations
       missing_translations.each do |locale|
-        model.translations.find_or_initialize_by_locale(locale)
+        translations.find_or_initialize_by_locale(locale)
       end
     end
 

@@ -7,7 +7,7 @@
 @translator ||= Admin::TranslateHelper::Translator.new
 @translator.setup do
   # make sure the translations exist on the model
-  Admin::TranslateHelper::Translator.setup_model(@item)
+  Admin::TranslateHelper::Translator.setup_translations(form.object.translations)
 %>
 <%=
   # load assets
