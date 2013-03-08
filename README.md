@@ -51,6 +51,9 @@ If you use this together with typus, you must assign the correct roles in the op
 
       typus_translate :title, :body, :as => [:editor, :admin]
 
+** Support for MarkItUp markup editor **
+
+The MarkItUp editor is automatically enabled for textareas if the typus_markitup gem is included. This provides a user interface to enter and modify Textile markup.
 
 ### In your migration
 
