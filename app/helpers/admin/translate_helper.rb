@@ -54,7 +54,9 @@ module Admin::TranslateHelper
     def field_type(field)
       case @model.translations.columns_hash[@attribute].type
       when :text
-        field.text_area(@attribute)
+        options = {}
+        options.merge!(:class => "markitup") if defined?(Typus::Markitup)
+        field.text_area(@attribute, options)
       else
         field.text_field(@attribute, :class => :text)
       end
