@@ -1,5 +1,5 @@
 require "typus_translate"
-require "globalize3"
+require "globalize"
 require "rails"
 
 module Typus

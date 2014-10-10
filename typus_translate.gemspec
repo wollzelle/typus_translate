@@ -18,10 +18,11 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency "rails", ">= 3.1.0"
+  s.add_dependency "rails", ">= 4.0"
   s.add_dependency "typus"
-  s.add_dependency "globalize3", '>= 0.2.0.beta6'
-  s.add_dependency "coffee-rails", ">= 3.1.0"
+  #'globalize', '~> 4.0.2'
+  s.add_dependency "globalize", '~> 4.0.2' #, '>= 0.2.0.beta6'
+  s.add_dependency "coffee-rails"#, ">= 3.1.0"
   s.add_dependency "jquery-rails"
   s.add_dependency "backbone-on-rails"
 end

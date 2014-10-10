@@ -17,13 +17,13 @@ module Typus
         extend TemplateMethods
 
         #Support for rails whitelist mode
-        unless accessible_attributes.empty?
-          attr_accessible :translations_attributes, :as => as
-          self::Translation.attr_accessible :locale, :as => as
-          fields.each do |f|
-            self::Translation.attr_accessible f, :as => as
-          end
-        end
+        # unless defined?(accessible_attributes) && accessible_attributes.empty?
+        #   attr_accessible :translations_attributes, :as => as
+        #   self::Translation.attr_accessible :locale, :as => as
+        #   fields.each do |f|
+        #     self::Translation.attr_accessible f, :as => as
+        #   end
+        # end
         accepts_nested_attributes_for :translations
 
       end
