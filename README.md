@@ -3,7 +3,7 @@
 Translate module for Typus, adds support for editing multiple languages.
 
 * https://github.com/wollzelle/typus_translate
-* https://github.com/fesplugas/typus
+* https://github.com/typus/typus
 
 ## Installation
 
@@ -70,4 +70,4 @@ If you use this together with typus, you must assign the correct roles in the op
 
 ## Copyright
 
-Copyright (c) 2011 Wollzelle GmbH. See LICENSE for details.
+Copyright (c) 2014 Wollzelle GmbH. See LICENSE for details.
