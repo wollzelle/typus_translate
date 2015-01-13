@@ -10,7 +10,7 @@
 
   <script>
     $(document).ready(function(){
-      $('form.resource').typusTranslate({
+      $('form[role=form]').typusTranslate({
         locales: <%= translator.locales_json %>,
         fallback: 'en'
       });

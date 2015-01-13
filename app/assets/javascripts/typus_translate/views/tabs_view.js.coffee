@@ -4,13 +4,13 @@ class Typus.Translate.Views.Tabs extends Backbone.View
     'click a': 'activateTab'
 
   template: JST['typus_translate/templates/tabs']
-  
+
   initialize: (options) ->
     { @locales, @fallback } = options
-    @form = $(@el).find('.inputs ol')
+    @form = @$el
     $(window, @form).bind('translate:refresh', (event, lang) => @onRefresh(lang))
     @render()
-    
+
   render: ->
     @form.prepend(@template({ @locales }))
     @tabs = $('#translate-tabs')
@@ -23,7 +23,7 @@ class Typus.Translate.Views.Tabs extends Backbone.View
 
   showTab: ->
     className = ".lang-#{@lang}"
-    @tabs.find('a').removeClass('active')
+    @tabs.find('.active').removeClass('active')
     @form.css({ 'min-height': @form.height() }) # prevents jumping
     @form.find('.translation').hide().removeClass('active')
     @form.find(className).addClass('active').show()
@@ -34,10 +34,10 @@ class Typus.Translate.Views.Tabs extends Backbone.View
     lang = $(e.target).data('lang')
     @form.trigger('translate:refresh', [lang])
     e.preventDefault()
-    
+
   getCookie: ->
     $.cookie('translate_active_lang')
-  
+
   setCookie: ->
-    $.cookie('translate_active_lang', @lang, { path: '/' } ) 
+    $.cookie('translate_active_lang', @lang, { path: '/' } )
 

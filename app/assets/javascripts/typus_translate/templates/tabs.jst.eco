@@ -1,7 +1,5 @@
-<li>
-  <div id="translate-tabs">
-    <% for locale, name of @locales: %>
-      <a href="#lang-<%= locale %>" class="lang-<%= locale %>" data-lang="<%= locale %>"><%= name %></a>
-    <% end %>
-  </div>
-</li>
+<ul id="translate-tabs" class="nav nav-tabs">
+  <% for locale, name of @locales: %>
+    <li class="lang-<%= locale %>" ><a href="#lang-<%= locale %>" data-lang="<%= locale %>"><%= name %></a></li>
+  <% end %>
+</ul>
