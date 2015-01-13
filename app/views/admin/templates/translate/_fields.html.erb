@@ -2,12 +2,14 @@
 
   <%# form.hidden_field :locale %>
 
-  <li class="<%= "translation lang-#{locale}" %>" <%= "data-limit=#{limit}" if limit %> >
+  <div class="form-group <%= "translation lang-#{locale}" %>" <%= "data-limit=#{limit}" if limit %> >
 
-    <%= form.label :locale, "#{@item.class.human_attribute_name(attribute, locale: locale)} (#{locale})" %>
+    <%= form.label :locale, "#{@item.class.human_attribute_name(attribute, locale: locale)} (#{locale})", class: 'control-label' %>
 
-    <%= instance.field_type(form) %>
+    <div class="controls">
+      <%= instance.field_type(form) %>
+    </div>
 
-  </li>
+  </div>
 
 <% end %>

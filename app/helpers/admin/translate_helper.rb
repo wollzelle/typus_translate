@@ -54,9 +54,9 @@ module Admin::TranslateHelper
     def field_type(field)
       case @model.translations.columns_hash[@attribute].type
       when :text
-        field.text_area(@attribute)
+        field.text_area(@attribute, class: 'form-control', rows: 15)
       else
-        field.text_field(@attribute, :class => :text)
+        field.text_field(@attribute, class: 'form-control')
       end
     end
 
