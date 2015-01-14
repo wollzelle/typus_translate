@@ -21,6 +21,10 @@
   render  :partial => 'admin/templates/translate/locales',
           :locals => { :translator => Admin::TranslateHelper::Translator, :form => form }
 %>
+<%=
+  # Render markitup if markitup is defined...
+    render :partial => "admin/templates/markitup", :locals => { :without_field => true } if defined?(Typus::Markitup)
+ %>
 <% end %>
 <%=
 ##
