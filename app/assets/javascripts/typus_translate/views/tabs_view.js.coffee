@@ -1,7 +1,7 @@
 class Typus.Translate.Views.Tabs extends Backbone.View
 
   events:
-    'click a': 'activateTab'
+    'click #translate-tabs a': 'activateTab'
 
   template: JST['typus_translate/templates/tabs']
 
