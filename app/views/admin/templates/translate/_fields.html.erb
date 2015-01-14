@@ -1,10 +1,8 @@
 <% translator.forms.each do |locale, form| %>
 
-  <%# form.hidden_field :locale %>
-
   <div class="form-group <%= "translation lang-#{locale}" %>" <%= "data-limit=#{limit}" if limit %> >
 
-    <%= form.label :locale, "#{@item.class.human_attribute_name(attribute, locale: locale)} (#{locale})", class: 'control-label' %>
+    <%= form.label :locale, "#{@item.class.human_attribute_name(attribute, locale: locale)} (#{locale})".html_safe, class: 'control-label' %>
 
     <div class="controls">
       <%= instance.field_type(form) %>
