@@ -1,6 +1,5 @@
 #= require underscore
 #= require backbone
-#= require jquery-ui
 #= require jquery.cookie
 #= require_self
 #= require_tree ./templates
@@ -11,13 +10,8 @@ window.Typus = Typus or {}
 Typus.Translate =
   Views: {}
 
-Typus.Translator = (options, el) ->
-  { locales, fallback } = options
-  new Typus.Translate.Views.Tabs({ el, locales, fallback })
+$.fn.typusTranslate = (options = {}) ->
+  @each (idx, el) -> new Typus.Translate.Views.Tabs _.extend options, {el}
 
-$.widget.bridge('typusTranslate', Typus.Translator);
-
-Typus.TextLimit = (options, el) ->
-  new Typus.Translate.Views.TextLimit({ el })
-
-$.widget.bridge('typusTextLimit', Typus.TextLimit);
+$.fn.typusTextLimit = (options = {}) ->
+  @each (idx, el) -> new Typus.Translate.Views.TextLimit _.extend options, {el}
