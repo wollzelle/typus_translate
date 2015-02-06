@@ -51,12 +51,12 @@ module Admin::TranslateHelper
       yield unless self.setup?
     end
 
-    def field_type(field)
+    def field_type(field, options)
       case @model.translations.columns_hash[@attribute].type
       when :text
-        field.text_area(@attribute)
+        field.text_area(@attribute, options)
       else
-        field.text_field(@attribute, :class => :text)
+        field.text_field(@attribute, options.merge!(class: 'text'))
       end
     end
 
