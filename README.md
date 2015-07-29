@@ -70,4 +70,4 @@ If you use this together with typus, you must assign the correct roles in the op
 
 ## Copyright
 
-Copyright (c) 2014 Wollzelle GmbH. See LICENSE for details.
+Copyright (c) 2015 Wollzelle GmbH. See LICENSE for details.
