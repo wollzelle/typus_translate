@@ -12,7 +12,7 @@ In your `Gemfile`:
 
 **In `config/translate.yml`:**
 
-    locales: 
+    locales:
       de: "Deutsch"
       en: "English"
 
@@ -38,7 +38,7 @@ In your `Gemfile`:
       translates :title, :text
       accepts_nested_attributes_for :translations
       ...
-    
+
 **In `config/typus/application.yml`**
 
     Posts:
@@ -46,9 +46,9 @@ In your `Gemfile`:
         form: translate
         options:
           templates:
-            translate: translate    
+            translate: translate
 
 
 ## Copyright
 
-Copyright (c) 2011 Wollzelle GmbH. See LICENSE for details.
+Copyright (c) 2015 Wollzelle GmbH. See LICENSE for details.
