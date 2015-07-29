@@ -73,4 +73,4 @@ The MarkItUp editor is automatically enabled for textareas if the typus_markitup
 
 ## Copyright
 
-Copyright (c) 2014 Wollzelle GmbH. See LICENSE for details.
+Copyright (c) 2015 Wollzelle GmbH. See LICENSE for details.
