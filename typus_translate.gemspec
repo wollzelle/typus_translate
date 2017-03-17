@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", ">= 4.0"
   s.add_dependency "typus"
   s.add_dependency "globalize"
+  s.add_dependency "activemodel-serializers-xml"
   s.add_dependency "coffee-rails"
   s.add_dependency "jquery-rails"
   s.add_dependency "backbone-on-rails"
